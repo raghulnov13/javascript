@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <table border="1">
+        <tr>
+            <th>Product Name</th>
+            <th>Unit Price</th>
+            <th>Qty</th>
+            <th>Action</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Mobile</td>
+            <td class="unitPrice">35000</td>
+            <td><input type="text" class="qty" value="2"></td>
+            <td><button class="user">Row Data</button></td>
+            <td class="price"></td>
+        </tr>
+        <tr>
+            <td>Laptop</td>
+            <td class="unitPrice">50000</td>
+            <td><input type="text" class="qty" value="2"></td>
+            <td><button class="user">Row Data</button></td>
+            <td class="price"></td>
+        </tr>
+        <tr>
+            <td>Headset</td>
+            <td class="unitPrice">5000</td>
+            <td><input type="text" class="qty" value="2"></td>
+            <td><button class="user">Row Data</button></td>
+            <td class="price"></td>
+        </tr>
+    </table>
+    <script>
+        // inputs:unitPrice,Qty
+        // output:price
+        function totalPrice() {
+            var unitPrice, qty, price,
+                rowElement = this.parentNode.parentNode,
+                unitPriceElements = rowElement.getElementsByClassName("unitPrice"),
+                unitPriceElement = unitPriceElements[0],
+                qtyElements = rowElement.getElementsByClassName("qty"),
+                qtyElement = qtyElements[0],
+                priceElements = rowElement.getElementsByClassName("price"),
+                priceElement = priceElements[0];
+
+            unitPrice = unitPriceElement.innerText;
+
+            qty = qtyElement.value;
+
+            price = unitPrice * qty;
+
+            priceElement.innerText = price;
+
+
+        }
+        var userElements = document.getElementsByClassName("user");
+        // userElement[0].addEventListener('click', totalPrice);
+        // userElement[1].addEventListener('click', totalPrice);
+        // userElement[2].addEventListener('click', totalPrice);
+
+        console.log(userElements);
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
